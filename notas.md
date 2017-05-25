@@ -17,3 +17,14 @@ $ denota el final del texto
 + indica que el ítem anterior debería ser repetido por lo menos una vez
 () para encerrar una parte del patrón
 ```
+* hablando del ORM y QuerySet podemos hacer distintos tipos de consultas aplicando distintos filtros aquí voy a poner unos ejemplos que se originan a partir del ejercicio realizado.
+
+* ```Post.objects.all() ``` para realizar una consulta de todos los posts.
+
+* ```Post.objects.filter(author=me)``` para realizar una consulta que filtre los posts por el autor, en este caso va a seleccionar los posts que en la variable author contenga mi nombre.
+
+* ```Post.objects.filter(title__contains='jueves')``` en este caso va a filtrar los posts que en su titulo contengan la plabra jueves.
+
+* ```Post.objects.filter(published_date__lte=timezone.now())``` con esta consulta obtenemos como resultado los post que hayan sido publicados hoy.
+
+* ```Post.objects.order_by('created_date')``` Con esta consulta no filtramos los posts sino que vamos a ordenar los objetos por su fecha de creación asi como se pede organizar por nombre o demas.
